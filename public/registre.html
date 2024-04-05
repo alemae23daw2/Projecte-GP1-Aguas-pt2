@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Formulario de Registro</h1>
+    <form action="/afegir" method="post">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="apellidos">Apellidos:</label>
+        <input type="text" id="apellidos" name="apellidos" required>
+
+        <label for="dni">DNI/NIE:</label>
+        <input type="text" id="dni" name="dni" pattern="[0-9]{8}[A-Z]" required>
+
+        <label for="genero">Género:</label>
+        <select id="genero" name="genero" required>
+            <option value="">Seleccionar...</option>
+            <option value="hombre">Hombre</option>
+            <option value="mujer">Mujer</option>
+            <option value="no_binario">No binario</option>
+        </select>
+
+        <label for="pswd">Contraseña:</label>
+        <input type="password" id="pswd" name="pswd" required>
+
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>
