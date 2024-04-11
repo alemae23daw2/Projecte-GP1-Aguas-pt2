@@ -1,4 +1,4 @@
-var express = require('express');
+const express = require('express');
 var http = require('http');
 var path = require('path');
 var logger = require('morgan');
@@ -8,9 +8,6 @@ var routes = require('./routes');
 
 const mongoose = require('mongoose');
 mongoose.set('debug', true);
-var mongo = require('mongodb');
-var monk = require('monk');
-var db = monk('mongodb://127.0.0.1:27017/alumnes');
 
 var app = express();
 
@@ -26,6 +23,7 @@ app.get('/', routes.index);
 
 app.post('/afegir', routes.afegir());
 app.post('/login', routes.login());
+app.post('/loginAdmin', routes.loginAdmin());
 app.get('/mostrarTots', routes.mostrarTots());
 app.get('/mostrarCon', routes.mostrarCoincidencies());
 

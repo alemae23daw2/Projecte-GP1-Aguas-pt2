@@ -4,17 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script>
+        window.onload = () =>{
+            let formClient = document.querySelectorAll("form")[0];
+            let formAdmin = document.querySelectorAll("form")[1];
+            let admin = false;
+            let canviar = document.querySelector("a");
+            canviar.addEventListener("click", () => {
+                if(admin){
+                    formAdmin.style.display="none";
+                    formClient.style.display="block";
+                    canviar.innerHTML="Login Client";
+                }else if(!admin){
+                    formAdmin.style.display="block";
+                    formClient.style.display="none";
+                    canviar.innerHTML="Login Admin";
+                }
+                admin = !admin;
+            });
+
+        }
+    </script>
 </head>
 <body>
     <h1>Login</h1>
-    <form action="/login" method="post">
+    <form action="/login" method="post" style="display: block;">
         <label for="usr">Usuario:</label>
         <input type="text" id="usr" name="usr" required>
-
+        <br>
         <label for="pswd">Contraseña:</label>
         <input type="password" id="pswd" name="pswd" required>
-
+        <br>
         <button type="submit">Enviar</button>
     </form>
+    <form action="/loginAdmin" method="post" style="display: none;">
+        <label for="usr">Admin:</label>
+        <input type="text" id="usr" name="usr" required>
+        <br>
+        <label for="pswd">Contraseña:</label>
+        <input type="password" id="pswd" name="pswd" required>
+        <br>
+        <button type="submit">Enviar</button>
+    </form>
+    <br>
+    <a style="cursor: pointer;">Login Admin</a>
 </body>
 </html>

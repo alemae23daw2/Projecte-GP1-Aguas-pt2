@@ -1,9 +1,58 @@
 doctype html
 html
     head
-        title= title
+        meta(charset='UTF-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+        title Document
     body
-        block content
-        block foot
-            #footer
-            p nombre d'operacions #{operacions}
+        head
+        meta(charset='UTF-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+        title Home
+        link(rel='stylesheet', href='/styles.css')
+    body
+        div(id='app')
+            .header
+                nav
+                    ul
+                        li: a(href='#') Inicio
+                        li: a(href='#') Acerca
+                        li: a(href='#') Contacto
+                .login-btn
+                    button(@click="open") Login
+            #loginModal.modal(v-if="isModalOpen")
+                .modal-content
+                    span.close(@click="close") &times;
+                    h2 Login
+                    form
+                        label(for='username') Usuario:
+                        input(type='text', id='username', name='username', required)
+                        br
+                        br
+                        label(for='password') Contraseña:
+                        input(type='password', id='password', name='password', required)
+                        br
+                        br
+                        button(type='submit') Iniciar Sesión
+                        br
+    script(type='module').
+        import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js';
+
+        createApp({
+            data() {
+                return {
+                    isModalOpen: false
+                }
+            },
+            methods: {
+                open: function () {
+                    this.isModalOpen = true;
+                    console.log(this.isModalOpen);
+                },
+                close: function () {
+                    this.isModalOpen = false;
+                    console.log(this.isModalOpen);
+                }
+            }
+        }).mount('#app');

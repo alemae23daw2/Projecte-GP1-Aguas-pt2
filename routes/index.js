@@ -1,17 +1,16 @@
 var crypto = require('crypto');
 const { default: mongoose } = require("mongoose");
+const crearClient = require('../objs');
+const crearAdmin = require('../objs');
 const userSchema = new mongoose.Schema({
-    nombre: String,
-    apellidos: String,
+    usr: String,
     dni: String,
     genero: String,
+    correo: String,
     hash: String,
     salt: String
 }, { collection: "test" });
 
-userSchema.methods.mostrarNombre = function mostrarNombre() {
-    return this.nombre;
-};
 userSchema.methods.setPassword = function (password) {
 
     // Creating a unique salt for a particular user 
@@ -33,22 +32,22 @@ userSchema.methods.validPassword = function (password) {
 const Usuario = mongoose.model("Usuario", userSchema);
 
 exports.index = function (req, res) {
-    res.render('index', { salutacio: 'Hola Vuejs' });
+    res.render('layout');
 };
 
 exports.afegir = function () {
     return async function (req, res) {
 
         // recuperem les dades del formulari
-        var nombre = req.body.nombre;
-        var apellidos = req.body.apellidos;
+        var usr = req.body.usr;
         var dni = req.body.dni;
         var genero = req.body.genero;
+        var correo = req.body.correo;
         var contraseña = req.body.pswd;
 
         await mongoose.connect('mongodb://127.0.0.1:27017/test').catch((err) => console.log(err));
 
-        let usuario1 = new Usuario({ nombre: nombre, apellidos: apellidos, dni: dni, genero: genero });
+        let usuario1 = new Usuario({ usr: usr, dni: dni, genero: genero, correo: correo });
         usuario1.setPassword(contraseña);
         await usuario1.save();
 
@@ -60,7 +59,6 @@ exports.afegir = function () {
 exports.login = function () {
     return async function (req, res) {
 
-        // recuperem les dades del formulari
         var usr = req.body.usr;
 
         await mongoose.connect('mongodb://127.0.0.1:27017/test').catch((err) => console.log(err));;
@@ -79,21 +77,44 @@ exports.login = function () {
             } 
         });*/
 
-        await Usuario.findOne({ nombre: usr }).then((usuario) =>{
+        await Usuario.findOne({ usr: usr }).then((usuario) =>{
             if(!usuario){
                 return res.render('mostrarAlumnes', { msg: "no se ha encontrado el usuario" });
             }else{
-                if (usuario.validPassword(req.body.pswd)) { 
-                    return res.render('mostrarAlumnes', { msg: "usuario y contraseña correctos" });
+                if (usuario.validPassword(req.body.pswd)) {
+                    var loggedUser = crearClient(usuario.usr, usuario.dni, usuario.correo, usuario.genero);
+                    console.log(loggedUser);
+                    //return res.render('mostrarAlumnes', { msg: "usuario y contraseña correctos" });
                 } 
                 else { 
                     return res.render('mostrarAlumnes', { msg: "usuario o contraseña incorrectos" });
                 }
             }
-        })
+        });
+    };
+};
 
-        //res.location("/");
-        //res.redirect("/");
+exports.loginAdmin = function () {
+    return async function (req, res) {
+
+        var usr = req.body.usr;
+
+        await mongoose.connect('mongodb://127.0.0.1:27017/test').catch((err) => console.log(err));;
+
+        await Usuario.findOne({ usr: usr }).then((usuario) =>{
+            if(!usuario){
+                return res.render('mostrarAlumnes', { msg: "no se ha encontrado el usuario" });
+            }else{
+                if (usuario.validPassword(req.body.pswd)) {
+                    var loggedUser = crearAdmin(usuario.usr, usuario.correo);
+                    console.log(loggedUser);
+                    //return res.render('mostrarAlumnes', { msg: "usuario y contraseña correctos" });
+                } 
+                else { 
+                    return res.render('mostrarAlumnes', { msg: "usuario o contraseña incorrectos" });
+                }
+            }
+        });
     };
 };
 
