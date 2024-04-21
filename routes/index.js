@@ -1,7 +1,5 @@
 var crypto = require('crypto');
 const { default: mongoose } = require("mongoose");
-const crearClient = require('../objs');
-const crearAdmin = require('../objs');
 const userSchema = new mongoose.Schema({
     usr: String,
     dni: String,
