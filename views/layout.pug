@@ -1,58 +1,109 @@
 doctype html
 html
-    head
-        meta(charset='UTF-8')
-        meta(http-equiv='X-UA-Compatible', content='IE=edge')
-        meta(name='viewport', content='width=device-width, initial-scale=1.0')
-        title Document
-    body
-        head
-        meta(charset='UTF-8')
-        meta(name='viewport', content='width=device-width, initial-scale=1.0')
-        title Home
-        link(rel='stylesheet', href='/styles.css')
-    body
-        div(id='app')
-            .header
-                nav
-                    ul
-                        li: a(href='#') Inicio
-                        li: a(href='#') Acerca
-                        li: a(href='#') Contacto
-                .login-btn
-                    button(@click="open") Login
-            #loginModal.modal(v-if="isModalOpen")
-                .modal-content
-                    span.close(@click="close") &times;
-                    h2 Login
-                    form
-                        label(for='username') Usuario  
-                        input(type='text', id='username', name='username', required)
-                        br
-                        br
-                        label(for='password') Contraseña 
-                        input(type='password', id='password', name='password', required)
-                        br
-                        br
-                        button(type='submit') Iniciar Sesión
-                        br
-    script(type='module').
-        import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js';
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title Document
+    link(rel='stylesheet', href='/styles.css')
+  body
+    div(id='app')
+      .header
+        nav
+          ul
+            li: a(href='#') Inicio
+            li: a(href='#') Acerca
+            li: a(href='#') Contacto
+        .login-btns
+          button(@click="openLogin") Iniciar Sesión (Usuario)
+          button(@click="openAdminLogin") Iniciar Sesión (Administrador)
+          button(@click="openRegister") Registrarse
+      #loginModal.modal(v-if="isLoginModalOpen")
+        .modal-content
+          span.close(@click="close") &times;
+          h2 Iniciar Sesión (Usuario)
+          form(action='/login', method='POST')
+            label(for='username') Usuario
+            input(type='text', id='username', name='usr', required)
+            br
+            br
+            label(for='password') Contraseña
+            input(type='password', id='password', name='pswd', required)
+            br
+            br
+            button(type='submit') Iniciar Sesión
+            br
+      #adminLoginModal.modal(v-if="isAdminLoginModalOpen")
+        .modal-content
+          span.close(@click="closeAdminLogin") &times;
+          h2 Iniciar Sesión (Administrador)
+          form(action='/loginAdmin', method='POST')
+            label(for='adminUsername') Usuario
+            input(type='text', id='adminUsername', name='usr', required)
+            br
+            br
+            label(for='adminPassword') Contraseña
+            input(type='password', id='adminPassword', name='pswd', required)
+            br
+            br
+            button(type='submit') Iniciar Sesión
+            br
+      #registerModal.modal(v-if="isRegisterModalOpen")
+        .modal-content
+          span.close(@click="closeRegister") &times;
+          h2 Registrarse
+          form(action='/afegir', method='POST')
+            label(for='registerUsername') Usuario
+            input(type='text', id='registerUsername', name='usr', required)
+            br
+            br
+            label(for='registerDNI') DNI
+            input(type='text', id='registerDNI', name='dni', required)
+            br
+            br
+            label(for='registerGender') Género
+            input(type='text', id='registerGender', name='genero', required)
+            br
+            br
+            label(for='registerEmail') Correo Electrónico
+            input(type='email', id='registerEmail', name='correo', required)
+            br
+            br
+            label(for='registerPassword') Contraseña
+            input(type='password', id='registerPassword', name='pswd', required)
+            br
+            br
+            button(type='submit') Registrarse
+            br
+  script(type='module').
+    import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js';
 
-        createApp({
-            data() {
-                return {
-                    isModalOpen: false
-                }
-            },
-            methods: {
-                open: function () {
-                    this.isModalOpen = true;
-                    console.log(this.isModalOpen);
-                },
-                close: function () {
-                    this.isModalOpen = false;
-                    console.log(this.isModalOpen);
-                }
-            }
-        }).mount('#app');
+    createApp({
+      data() {
+        return {
+          isLoginModalOpen: false,
+          isAdminLoginModalOpen: false,
+          isRegisterModalOpen: false
+        }
+      },
+      methods: {
+        openLogin: function () {
+          this.isLoginModalOpen = true;
+        },
+        close: function () {
+          this.isLoginModalOpen = false;
+        },
+        openAdminLogin: function () {
+          this.isAdminLoginModalOpen = true;
+        },
+        closeAdminLogin: function () {
+          this.isAdminLoginModalOpen = false;
+        },
+        openRegister: function () {
+          this.isRegisterModalOpen = true;
+        },
+        closeRegister: function () {
+          this.isRegisterModalOpen = false;
+        }
+      }
+    }).mount('#app');

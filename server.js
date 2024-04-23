@@ -20,12 +20,18 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', routes.index);
+app.get('/homeusr', function(req, res) {
+    res.render('homeusr'); 
+});
+
+app.get('/homeadmin', function(req, res) {
+    res.render('homeadmin'); 
+});
 
 app.post('/afegir', routes.afegir());
 app.post('/login', routes.login());
 app.post('/loginAdmin', routes.loginAdmin());
-app.get('/mostrarTots', routes.mostrarTots());
-app.get('/mostrarCon', routes.mostrarCoincidencies());
+
 
 
 app.use(function(req, res, next) {
