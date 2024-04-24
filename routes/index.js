@@ -71,7 +71,7 @@ exports.login = function () {
                 if (usuario.validPassword(req.body.pswd)) {
                     const sessionId = createSession(usuario.usr, false);
                     res.cookie('session_id', sessionId);
-                    return res.redirect('/homeusr');
+                    return res.render('homeusr', { logat: true });
                 } else {
                     return res.render('mostrarAlumnes', { msg: "usuario o contraseña incorrectos" });
                 }

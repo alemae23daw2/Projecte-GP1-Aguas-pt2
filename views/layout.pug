@@ -14,10 +14,11 @@ html
             li: a(href='#') Inicio
             li: a(href='#') Acerca
             li: a(href='#') Contacto
-        .login-btns
-          button(@click="openLogin") Iniciar Sesión (Usuario)
-          button(@click="openAdminLogin") Iniciar Sesión (Administrador)
-          button(@click="openRegister") Registrarse
+        if !logat
+          .login-btns
+            button(@click="openLogin") Iniciar Sesión (Usuario)
+            button(@click="openAdminLogin") Iniciar Sesión (Administrador)
+            button(@click="openRegister") Registrarse
       #loginModal.modal(v-if="isLoginModalOpen")
         .modal-content
           span.close(@click="close") &times;
@@ -75,6 +76,10 @@ html
             br
             button(type='submit') Registrarse
             br
+
+  block content
+    logged= logged
+
   script(type='module').
     import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js';
 
