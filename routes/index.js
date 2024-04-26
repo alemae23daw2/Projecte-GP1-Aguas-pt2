@@ -1,5 +1,7 @@
 const crypto = require('crypto');
+const cookieParser = require('cookie-parser');
 const { default: mongoose } = require("mongoose");
+
 
 const userSchema = new mongoose.Schema({
     usr: String,
@@ -99,5 +101,16 @@ exports.loginAdmin = function () {
                 }
             }
         });
+    };
+};
+
+exports.logout = function() {
+    return function(req, res) {
+        const sessionId = req.cookies.session_id;
+        if (sessionId && sessions[sessionId]) {
+            delete sessions[sessionId];
+            res.clearCookie('session_id');
+        }
+        res.redirect('/');
     };
 };

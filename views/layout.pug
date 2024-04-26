@@ -14,6 +14,8 @@ html
             li: a(href='#') Inicio
             li: a(href='#') Acerca
             li: a(href='#') Contacto
+            // Agrega el botón de logout
+            li: a(href='/logout') Logout
         if !logat
           .login-btns
             button(@click="openLogin") Iniciar Sesión (Usuario)

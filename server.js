@@ -1,9 +1,7 @@
 const express = require('express');
-var http = require('http');
 var path = require('path');
 var logger = require('morgan');
-var bodyParser = require('body-parser');
-
+const cookieParser = require('cookie-parser'); 
 var routes = require('./routes');
 
 const mongoose = require('mongoose');
@@ -18,6 +16,7 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(cookieParser());
 
 app.get('/', routes.index);
 app.get('/homeusr', function(req, res) {
@@ -27,7 +26,7 @@ app.get('/homeusr', function(req, res) {
 app.get('/homeadmin', function(req, res) {
     res.render('homeadmin'); 
 });
-
+app.get('/logout', routes.logout());
 app.post('/afegir', routes.afegir());
 app.post('/login', routes.login());
 app.post('/loginAdmin', routes.loginAdmin());
