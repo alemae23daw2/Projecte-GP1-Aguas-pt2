@@ -26,6 +26,9 @@ app.get('/homeusr', function(req, res) {
 app.get('/homeadmin', function(req, res) {
     res.render('homeadmin'); 
 });
+app.get('/desalinitzadores', function(req, res) {
+    res.render('desalinitzadores'); 
+});
 app.get('/logout', routes.logout());
 app.post('/afegir', routes.afegir());
 app.post('/login', routes.login());
