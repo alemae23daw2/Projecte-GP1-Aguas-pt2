@@ -11,18 +11,26 @@ html
       .header
         nav
           ul
-            li: a(href='#') Inicio
+            li: a(href='/home') Inicio
             li: a(href='/desalinitzadores') Desaliinitzadores
+            li: a(href='/nigeria') Nigeria
+            li: a(href='/australia') Australia
+            li: a(href='/comparacio') Comparació
+            li: a(href='/plan') Plan
             li: a(href='#') Contacto
             li: a(href='/planta.html') Planta
-
-            // Agrega el botón de logout
-            li: a(href='/logout') Logout
         if !logat
           .login-btns
             button(@click="openLogin") Iniciar Sesión (Usuario)
             button(@click="openAdminLogin") Iniciar Sesión (Administrador)
             button(@click="openRegister") Registrarse
+        else if isAdmin
+            p #{nom}
+            button: a(href='/panelControl') Panell de Control Admin
+            button: a(href='/logout') Logout
+        else if !isAdmin
+            p #{nom}
+            button: a(href='/logout') Logout
       #loginModal.modal(v-if="isLoginModalOpen")
         .modal-content
           span.close(@click="close") &times;
@@ -83,6 +91,8 @@ html
 
   block content
     logged= logged
+    isAdmin= isAdmin
+    nom= nom
 
   script(type='module').
     import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js';
