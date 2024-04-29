@@ -7,10 +7,14 @@
     "body-parser": "~1.0.0",
     "cookie-parser": "^1.4.6",
     "express": "^4.19.1",
+    "fs": "^0.0.1-security",
+    "https": "^1.0.0",
     "mongodb": "*",
     "mongoose": "^8.2.3",
     "monk": "*",
     "morgan": "~1.9.1",
-    "pug": "^3.0.2"
+    "path": "^0.12.7",
+    "pug": "^3.0.2",
+    "static-favicon": "^2.0.0-alpha"
   }
 }
