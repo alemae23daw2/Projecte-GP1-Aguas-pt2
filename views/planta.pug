@@ -12,7 +12,6 @@ block content
     link(rel="icon" type="image/x-icon" href="/IMATGES/favicon.ico")
 
   body
-    #map
     h1 On hem pensat Situar la planta dessalinitzadora?
     h2.subtitul Hem decidit que una bona zona seria entre Leki i Orimedu ja que hi ha una gran expansió de terreny sense arbres ni construccions:
     br
@@ -22,13 +21,8 @@ block content
           .item
           .item
             img(src="Imatges/cuadrant_colors.png" alt="Image")
-  script.
-    var map = L.map('map').setView([6.441626288975287, 3.773954097364349], 13)
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map)
-    L.marker([6.441626288975287, 3.773954097364349]).addTo(map)
-    .bindPopup('Desalinitzadora')
-    .openPopup()
-    
+    #map
+  
     .posters-container
       .poster(id="titA")
         h2
@@ -49,6 +43,11 @@ block content
         img(src="Imatges/tiktok.svg" width="30" height="30")
         img(src="Imatges/x.svg" width="30" height="30")
         img(src="Imatges/youtube.svg" width="30" height="30")
-
+  script.
+    var map = L.map('map').setView([6.441626288975287, 3.773954097364349], 13)
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map)
+    L.marker([6.441626288975287, 3.773954097364349]).addTo(map)
+    .bindPopup('Desalinitzadora')
+    .openPopup()
 
     
