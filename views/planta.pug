@@ -22,6 +22,12 @@ block content
           .item
           .item
             img(src="Imatges/cuadrant_colors.png" alt="Image")
+  script.
+    var map = L.map('map').setView([6.441626288975287, 3.773954097364349], 13)
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map)
+    L.marker([6.441626288975287, 3.773954097364349]).addTo(map)
+    .bindPopup('Desalinitzadora')
+    .openPopup()
     
     .posters-container
       .poster(id="titA")
@@ -35,8 +41,8 @@ block content
       ul.ulContacte
         li Telf: 746783562
         li Email: contacte.aigua@gmail.com
-        li C. de la Industria 117, L'Eixample, 08025 Barcelona
-      h3.titolSocials Troba'ns a:
+        li C. de la Industria 117, "L'Eixample, 08025 Barcelona"
+      h3.titolSocials "Troba'ns a:"
       .ulSocials
         img(src="Imatges/instagram.svg" width="30" height="30")
         img(src="Imatges/facebook.svg" width="30" height="30")
@@ -44,10 +50,5 @@ block content
         img(src="Imatges/x.svg" width="30" height="30")
         img(src="Imatges/youtube.svg" width="30" height="30")
 
-    script.
-      var map = L.map('map').setView([6.441626288975287, 3.773954097364349], 13)
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map)
-      L.marker([6.441626288975287, 3.773954097364349]).addTo(map)
-        .bindPopup('Desalinitzadora')
-        .openPopup()
+
     
