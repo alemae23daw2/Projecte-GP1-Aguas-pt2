@@ -1,105 +1,159 @@
 extends layout
 
 block content
-  - var logged = logat
-  - var isAdmin = isAdmin
-  - var nom = name  
-
-  h1#aus AUSTRALIA
-  img#foto(src="/Imatges/genteA.jpg")
-
-  .container-text
-    h1#mapa Mapa de la demografia de Nigeria
-
-  #grafica
-    div(style="display: flex; margin-left: 47px;")
-      div#etiq
-        p 25.000.000
-        p 24.000.000
-        p 23.000.000
-        p 22.000.000
-        p 20.000.000
-        p 19.000.000
-        p 17.000.000
-      canvas#miCanvas(width="1000", height="600")
-      script.
-        var canvas = document.getElementById("miCanvas");
-        var ctx = canvas.getContext("2d");
-        var rectanguloAncho = 1000;
-        var rectanguloAlto = 600;
-        var cuadradoAncho = 80;
-        var cuadradoAlto = 80;
-        var filas = rectanguloAlto / cuadradoAlto;
-        var columnas = rectanguloAncho / cuadradoAncho;
-        ctx.lineTo(200, 100);
-
-        ctx.fillStyle = "#E8F1F2";
-        ctx.fillRect(0, 0, rectanguloAncho, rectanguloAlto);
-
-        ctx.strokeStyle = "#787878";
-        for (var fila = 0; fila < filas; fila++) {
-          for (var columna = 0; columna < columnas; columna++) {
-            var x = columna * cuadradoAncho;
-            var y = fila * cuadradoAlto;
-            ctx.strokeRect(x, y, cuadradoAncho, cuadradoAlto);
-          }
-        } 
-
-        ctx.lineWidth = 5;
-
-        ctx.beginPath();
-        ctx.moveTo(80,462); 
-        ctx.lineTo(0,550);
-        ctx.strokeStyle = "#FF0000";
-        ctx.stroke();
-        ctx.closePath();
-
-        // Continuar con el resto del script...
-
-  #pob
-    p#ans 1990
-    p#ans 1993
-    p#ans 1995
-    p#ans 2000
-    p#ans 2005
-    p#ans 2007
-    p#ans 2010
-    p#ans 2012
-    p#ans 2015
-    p#ans 2018
-    p#ans 2020
-    p#ans 2021
-
-  .container-mapa
-    #map
-
-  br
-  br
-
-  h2#info Infromació
-
-  .parent
-    .div1
-      h3.tit Per que Australia?
-      p.txt Hem pensat en escollir Austràlia, ja que també es un pais que te bastantes zones en les cuals manca aigue i atraves de les dessalinitzadores han aconsegit suplir aquesta manca d'aigua d'una manera efficient i de totes elles nosaltres ens enfoqem en la de Melbourne.
-    .div2
-      h3.tit Per que la Planta Dessalinitzadora de Melbourne?
-      p.txt Nosaltres em triat la planta de dessalinització de Melbourne ja que va ser dissenyada amb mesures específiques per a garantir la sostenibilitat del projecte, tenint en compte l'impacte ambiental, l'eficiència energètica i la participació de la comunitat, factors claus que es necesitan tenir en compte per a realizar proectes d'aquesta mida per aixó considerem que són un exemple  aseguuir.
-    .div4
-      h3.tit L'aigua que prodeix la desalinizadora on va?
-      p.txt En el cas de la desalinitzadora de melbourne una part de l'aigua tractada es desplaça a la zona nort del pais en unes tuberies especials i acaban en un embassament per aqest fet també ens va interesar aquesta desalinitzadora.
-
-  footer
-    h3.titolContacte Contacte:
-    ul.ulContacte
-      li Telf: 746783562
-      li Email: contacte.aigua@gmail.com
-      li C. de la Industria 117, L'Eixample, 08025 Barcelona
-    h3.titolSocials Troba'ns a:
-    .ulSocials
-      img(src="Imatges/instagram.svg", width="30", height="30")
-      img(src="Imatges/facebook.svg", width="30", height="30")
-      img(src="Imatges/tiktok.svg", width="30", height="30")
-      img(src="Imatges/x.svg", width="30", height="30")
-      img(src="Imatges/youtube.svg", width="30", height="30")
-    link(rel='stylesheet', href='/australia.css')
+  doctype html
+  html(lang="en")
+    head
+      meta(charset="UTF-8")
+      meta(name="viewport", content="width=device-width, initial-scale=1.0")
+      title Australia
+      link(rel="stylesheet", href="australia.css")
+    body
+      h1#aus AUSTRALIA
+      img#foto(src="/Imatges/genteA.jpg")
+      .container-text
+        h1#mapa Mapa de la demografía de Nigeria
+      #grafica
+        div(style="display: flex;margin-left: 47px;")
+          div#etiq
+            p 25.000.000
+            p 24.000.000
+            p 23.000.000
+            p 22.000.000
+            p 20.000.000
+            p 19.000.000
+            p 17.000.000
+          canvas#miCanvas(width="1000", height="600")
+            script.
+              var canvas = document.getElementById("miCanvas");
+              var ctx = canvas.getContext("2d");
+   
+              var rectanguloAncho = 1000;
+              var rectanguloAlto = 600;
+   
+              var cuadradoAncho = 80;
+              var cuadradoAlto = 80;
+   
+              var filas = rectanguloAlto / cuadradoAlto;
+              var columnas = rectanguloAncho / cuadradoAncho;
+              ctx.lineTo(200, 100);
+   
+              ctx.fillStyle = "#E8F1F2";
+              ctx.fillRect(0, 0, rectanguloAncho, rectanguloAlto);
+   
+              ctx.strokeStyle = "#787878";
+              for (var fila = 0; fila < filas; fila++) {
+                  for (var columna = 0; columna < columnas; columna++) {
+                      var x = columna * cuadradoAncho;
+                      var y = fila * cuadradoAlto;
+                      ctx.strokeRect(x, y, cuadradoAncho, cuadradoAlto);
+                  }
+              }
+              /* Aquí comienza a crear la línea */
+              ctx.lineWidth = 5;
+   
+              ctx.beginPath();
+              ctx.moveTo(80,462); 
+              ctx.lineTo(0,550);
+              ctx.strokeStyle = "#FF0000";
+              ctx.stroke();
+              ctx.closePath();
+   
+              ctx.beginPath();
+              ctx.moveTo(80,462); 
+              ctx.lineTo(160,450);
+              ctx.strokeStyle = "#FF0000";
+              ctx.stroke();
+              ctx.closePath();
+   
+              ctx.beginPath();
+              ctx.moveTo(160,450); 
+              ctx.lineTo(240,445);
+              ctx.strokeStyle = "#FF0000";
+              ctx.stroke();
+              ctx.closePath();
+           
+              ctx.beginPath();
+              ctx.moveTo(240,445); 
+              ctx.lineTo(320,380);
+              ctx.strokeStyle = "#FF0000";
+              ctx.stroke();
+              ctx.closePath();
+           
+              ctx.beginPath();
+              ctx.moveTo(320,380); 
+              ctx.lineTo(400,360);
+              ctx.strokeStyle = "#FF0000";
+              ctx.stroke();
+              ctx.closePath();
+           
+              ctx.beginPath();
+              ctx.moveTo(400,360); 
+              ctx.lineTo(480,330);
+              ctx.strokeStyle = "#FF0000";
+              ctx.stroke();
+              ctx.closePath();
+           
+              ctx.beginPath();
+              ctx.moveTo(480,330); 
+              ctx.lineTo(560,300);
+              ctx.strokeStyle = "#FF0000";
+              ctx.stroke();
+              ctx.closePath();
+           
+              ctx.beginPath();
+              ctx.moveTo(560,300); 
+              ctx.lineTo(640,290);
+              ctx.strokeStyle = "#FF0000";
+              ctx.stroke();
+              ctx.closePath();
+           
+              ctx.beginPath();
+              ctx.moveTo(640,290); 
+              ctx.lineTo(720,230);
+              ctx.strokeStyle = "#FF0000";
+              ctx.stroke();
+              ctx.closePath();
+           
+              ctx.beginPath();
+              ctx.moveTo(720,230); 
+              ctx.lineTo(800,170);
+              ctx.strokeStyle = "#FF0000";
+              ctx.stroke();
+              ctx.closePath();
+           
+              ctx.beginPath();
+              ctx.moveTo(800,170); 
+              ctx.lineTo(880,89);
+              ctx.strokeStyle = "#FF0000";
+              ctx.stroke();
+              ctx.closePath();
+           
+              ctx.beginPath();
+              ctx.moveTo(880,89); 
+              ctx.lineTo(960,70);
+              ctx.strokeStyle = "#FF0000";
+              ctx.stroke();
+              ctx.closePath();
+      #pob
+        p#ans 1990
+        p#ans 1993
+        p#ans 1995
+        p#ans 2000
+        p#ans 2005
+        p#ans 2007
+        p#ans 2010
+        p#ans 2012
+        p#ans 2015
+        p#ans 2018
+        p#ans 2020
+        p#ans 2021
+      .container-mapa
+        #map
+      br
+      br
+      h2#info Información
+      .parent
+        .div1
+          h3.tit ¿Por qué Australia?
+          p.txt Hemos pensado en escoger Australia, ya que también es un país que tiene bastantes zonas en las cuales falta agua y a través de las desalinizadoras han conseguido suplir esta falta de agua de una manera eficiente y de todas ellas nosotros nos enfocamos en la de Melbourne.

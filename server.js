@@ -41,7 +41,9 @@ app.get('/plan', function(req, res) {
 app.get('/contacte', function(req, res) {
     res.render('contacte');
 });
-
+app.get('/home', function(req, res) {
+    res.render('home');
+});
 app.get('/planta', function(req, res) {
     res.render('planta'); 
 });
