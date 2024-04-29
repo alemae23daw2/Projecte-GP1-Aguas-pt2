@@ -42,6 +42,9 @@ app.get('/contacte', function(req, res) {
     res.render('contacte');
 });
 
+app.get('/planta', function(req, res) {
+    res.render('planta'); 
+});
 app.get('/logout', routes.logout());
 app.post('/afegir', routes.afegir());
 app.post('/login', routes.login());
