@@ -32,6 +32,12 @@ nav ul li a {
     padding: 10px;
 }
 
+a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+}
+
 .login-btn button {
     background-color: #3e9241;
     color: white;
@@ -59,7 +65,7 @@ nav ul li a {
 .modal-content {
     text-align: center;
     background-color: #fefefe;
-    margin: 15% auto;
+    margin: 10% auto;
     padding: 20px;
     border: 1px solid #888;
     width: 20%;
@@ -83,15 +89,16 @@ nav ul li a {
 label {
     display: block; 
     margin-bottom: 5px; 
-  }
-  
-  input[type="text"],
-  input[type="password"] {
+}
+
+input[type="text"],
+input[type="password"] {
     width: 75%; 
     box-sizing: border-box; 
     padding: 5px; 
     border: 1px solid #ccc;
-  }
+}
+
 button{
     background-color: #4CAF50;
     color: white;
@@ -99,7 +106,28 @@ button{
     border: none;
     border-radius: 5px;
     cursor: pointer;
-   
-} button:hover {
+}
+
+button:hover {
     background-color: #45a049;
+}
+
+.container-info {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.container-info h1 {
+    color: #333;
+    text-align: center;
+}
+
+.container-info p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
 }

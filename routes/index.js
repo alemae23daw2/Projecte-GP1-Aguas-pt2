@@ -73,7 +73,7 @@ exports.login = function () {
                 if (usuario.validPassword(req.body.pswd)) {
                     const sessionId = createSession(usuario.usr, false);
                     res.cookie('session_id', sessionId);
-                    return res.render('homeusr', { logat: true });
+                    return res.render('homeusr', { logat: true , isAdmin: false, name: 'jaime'});
                 } else {
                     return res.render('mostrarAlumnes', { msg: "usuario o contraseña incorrectos" });
                 }
@@ -95,7 +95,7 @@ exports.loginAdmin = function () {
                 if (usuario.validPassword(req.body.pswd, true)) {
                     const sessionId = createSession(usuario.usr, true);
                     res.cookie('session_id', sessionId);
-                    return res.redirect('/homeadmin');
+                    return res.render('homeusr', { logat: true , isAdmin: true, name: usuario.usr});
                 } else {
                     return res.render('mostrarAlumnes', { msg: "usuario o contraseña incorrectos" });
                 }
