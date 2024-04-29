@@ -35,9 +35,6 @@ app.get('/australia', function(req, res) {
 app.get('/comparacio', function(req, res) {
     res.render('comparacio');
 });
-app.get('/plan', function(req, res) {
-    res.render('plan');
-});
 app.get('/contacte', function(req, res) {
     res.render('contacte');
 });
