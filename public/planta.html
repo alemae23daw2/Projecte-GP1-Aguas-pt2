@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacte</title>
+    <link rel="stylesheet" href="planta.css">
+    <link rel="icon" type="image/x-icon" href="/IMATGES/favicon.ico">  
+  <style>
+    #map {
+      height: 400px;
+      margin: auto;
+      margin-top: 10px;
+      width: 1000px;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>On hem pensat Situar la planta dessalinitzadora?</h1>
+<h2 class="subtitul">Hem decidit que una bona zona seria entre Leki i Orimedu ja que hi ha una gran expansio de terreny sense abres ni construccions:</h2><br>
+<div class="gallery-wrapper">
+  <div class="gallery-scroll">
+    <div class="gallery">
+      <div class="item">
+      </div>
+      <div class="item">
+        <img src="Imatges/cuadrant_colors.png" alt="Image" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="map"></div>
+
+<script>
+  var map = L.map('map').setView([6.441626288975287, 3.773954097364349], 13);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+  L.marker([6.441626288975287, 3.773954097364349]).addTo(map)
+    .bindPopup('Desalinitzadora')
+    .openPopup();
+</script>
+
+<div class="posters-container">
+  <div class="poster" id="titA">
+      <h2><u>Perquè aquesta ubicacio?</u></h2><br>
+      
+           Vam estar buscant durant uns dies quina zona seria la indicada per a establir la planta dessalinitzadora, ja que hi havia molts factors a tenir en compte com si ja hi havia infraestructura en la zona, si era una zona habitada, potser també a l'haver-hi selva a poca distància no es podia construir perquè podria ser una zona protegida i al final vam trobar aquesta zona que no té massa vegetació ni tampoc gent habitant-la, perquè un altre punt que havíem de tenir en compte era que la zona havia d'estar a prop del mar, ja que al final les dessalinitzadores s'encarreguen de filtrar aigua salada mitjançant uns processos per a ferla potable.
+ 
+     
+  </div>
+<footer>
+  <h3 class="titolContacte">Contacte:</h3>
+  <ul class="ulContacte">
+      <li>Telf: 746783562</li>
+      <li>Email: contacte.aigua@gmail.com</li>
+      <li>C. de la Industria 117, L'Eixample, 08025 Barcelona</li>
+  </ul>
+  <h3 class="titolSocials">Troba'ns a:</h3>
+  <div class="ulSocials">
+      <img src="Imatges/instagram.svg" width="30" height="30">
+      <img src="Imatges/facebook.svg" width="30" height="30">
+      <img src="Imatges/tiktok.svg" width="30" height="30">
+      <img src="Imatges/x.svg" width="30" height="30">
+      <img src="Imatges/youtube.svg" width="30" height="30">
+  </div>
+</footer>
+</body>
+</html>
+
