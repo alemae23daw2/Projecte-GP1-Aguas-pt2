@@ -1,41 +1,66 @@
 extends layout
 
 block content
-- var logged = logat
-  head
-    meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    title Desalinitzadores
-    link(rel='stylesheet', href='/des.css')
-    link(rel="icon", type="image/x-icon", href="/IMATGES/favicon.ico")
-    style
-      h1
-        font-size: 1.5rem
-        margin-left: 20px
-        margin-top: 50px
-      p
-        font-size: 1rem
-        margin-left: 20px
-  body
-    p
-      nav.water-menu
-        ul.lu
-          li.menu: a.aa(href="home.html") Inici
-          li.menu: a.aa(href="desalinizadora.html") Desalinitzadores
-          li.menu: a.aa(href="nigeria.html") Nigeria
-          li.menu: a.aa(href="australia.html") Australia
-          li.menu: a.aa(href="comparacio.html") Comparació
-          li.menu: a.aa(href="plan.html") Pla d'actuació
-          li.menu: a.aa(href="contacte.html") Contacte
-          li.menu: a.aa(href="planta.html") Planta
 
-    h1(style="text-align: center; margin-bottom: 100px; font-size: 40px") Desalinitzadores
-    #mainDiv
-      #textDiv
-        h1(style="margin-top: 10%; margin-left:10%;font-size: 30px") Què son les dessalinisadores?
-        p#p1
-          | Les dessalinisadores, també coneguts com a plantes de dessalinització, són instal·lacions dissenyades per eliminar
-          | la sal i altres minerals de l'aigua del mar o d'altres fonts d'aigua salada.
+    - var logged = logat
+    - var isAdmin = isAdmin
+    - var nom = name
+
+
+      h1(style="text-align: center; margin-bottom: 100px; font-size: 40px") Desalinitzadores
+      #mainDiv
+        #textDiv
+          h1(style="margin-top: 10%; margin-left:10%;font-size: 30px") Què son les dessalinisadores?
+          p#p1
+            | Les dessalinisadores, també coneguts com a plantes de dessalinització, són instal·lacions dissenyades per eliminar
+            | la sal i altres minerals de l'aigua del mar o d'altres fonts d'aigua salada.
+            br
+            | Hi ha diferents tecnologies de dessalinització, i els materials utilitzats poden variar segons el mètode específic
+            | emprat. Les dues tecnologies principals són l'òsmosi inversa i la destil·lació.
+        #imgDiv
+          img#i1(src="/Imatges/des.png", alt="desalinitzadora")
+      #mainDiv
+        #imgDiv
+          iframe#v1(style="border-radius: 10px;", src="https://www.youtube.com/embed/aVdWqbpbv_Y?si=K-JMNaZP2KQsOTvO", title="YouTube video player", frameborder="0", allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share", allowfullscreen)
+        #textDiv
+          h1(style="margin-top: 10%; margin-left:30%;font-size: 30px") Òsmosi Inversa
+          p#p2
+            | Membranes d'òsmosi inversa:
+            br
+            | Generalment estan fetes de poliamida, un material polimèric que permet el pas selectiu de l'aigua a través de la
+            | membrana mentre reté les sals i altres contaminants. Aquestes membranes són components clau.
+            br
+            | Recipients i tuberies:
+            br
+            | S'utilitzen materials resistents a la corrosió, com acer inoxidable, per contenir i transportar l'aigua tractada i
+            | els productes químics necessaris per al procés.
+            br
+            | Bombes i equips de pressió:
+            br
+            | S'utilitzen materials resistents a l'aigua salada i a la corrosió, com aliatges de titani o revestiments protectors,
+            | per garantir la durabilitat i eficiència dels components.
+      #mainDiv
+        #textDiv
+          h1(style="margin-top: 10%; margin-left:30%;font-size: 30px") Destil·lació
+          p#p1
+            | Intercanviadors de calor:
+            br
+            | Poden estar fets de materials resistents a la corrosió, com titani o aliatges de níquel, per suportar les condicions
+            | d'alta temperatura i salinitat de l'aigua de mar.
+            br
+            | Evaporadors i condensadors:
+            br
+            | Materials resistents a la corrosió i al calor, com acer inoxidable o aliatges especials.
+            br
+            | Recipients d'emmagatzematge:
+            br
+            | Com a la òsmosi inversa, s'utilitzen materials resistents a la corrosió per emmagatzemar l'aigua tractada.
+        #imgDiv
+          img#i1(style="border-radius: 10px;", src="/Imatges/sal.png", alt="desalinitzadora")
+      div(style="text-align: center;")
+        h1(style="font-size: 30px") Tractament previ i post-tractament:
+        p#p4(style="text-align:center;font-size: 24px")
+          | Filtres i pretractament:
           br
           | Hi ha diferents tecnologies de dessalinització, i els materials utilitzats poden variar segons el mètode específic
           | emprat. Les dues tecnologies principals són l'òsmosi inversa i la destil·lació.
@@ -84,91 +109,44 @@ block content
       p#p4(style="text-align:center;font-size: 24px")
         | Filtres i pretractament:
         br
-        | Hi ha diferents tecnologies de dessalinització, i els materials utilitzats poden variar segons el mètode específic
-        | emprat. Les dues tecnologies principals són l'òsmosi inversa i la destil·lació.
-    #imgDiv
-      img#i1(src="/Imatges/des.png", alt="desalinitzadora")
-  #mainDiv
-    #imgDiv
-      iframe#v1(style="border-radius: 10px;", src="https://www.youtube.com/embed/aVdWqbpbv_Y?si=K-JMNaZP2KQsOTvO", title="YouTube video player", frameborder="0", allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share", allowfullscreen)
-    #textDiv
-      h1(style="margin-top: 10%; margin-left:30%;font-size: 30px") Òsmosi Inversa
-      p#p2
-        | Membranes d'òsmosi inversa:
+        | Depenent de la tecnologia específica, es poden utilitzar diferents materials per a la filtració, com mitjans
+        | filtrants de fibra de vidre, carbó actiu i altres materials adequats per a l'eliminació de partícules i contaminants
+        | prèvis al procés principal.
         br
-        | Generalment estan fetes de poliamida, un material polimèric que permet el pas selectiu de l'aigua a través de la
-        | membrana mentre reté les sals i altres contaminants. Aquestes membranes són components clau.
+        | Productes químics:
         br
-        | Recipients i tuberies:
+        | S'utilitzen diversos productes químics per tractar l'aigua abans i després del procés principal. Els recipients i
+        | tuberies que entren en contacte amb aquests productes sovint estan fets de materials compatibles amb els químics
+        | utilitzats.
         br
-        | S'utilitzen materials resistents a la corrosió, com acer inoxidable, per contenir i transportar l'aigua tractada i
-        | els productes químics necessaris per al procés.
+        | Eficiència i costos:
         br
-        | Bombes i equips de pressió:
+        | La selecció de materials depèn de factors com la composició de l'aigua d'alimentació, la pressió, la temperatura i
+        | la durabilitat requerida pel sistema. Cal investigar sobre la font de l'aigua i també poder guanyar eficiència.
         br
-        | S'utilitzen materials resistents a l'aigua salada i a la corrosió, com aliatges de titani o revestiments protectors,
-        | per garantir la durabilitat i eficiència dels components.
-  #mainDiv
-    #textDiv
-      h1(style="margin-top: 10%; margin-left:30%;font-size: 30px") Destil·lació
-      p#p1
-        | Intercanviadors de calor:
+        | Els costos d'una dessalinadora depenen de diversos factors, incloent el cost inicial, els costos operatius, la
+        | disponibilitat i cost de l'energia, entre d'altres. La tecnologia d'òsmosi inversa (OI) ha estat una de les opcions
+        | més comúment utilitzades i ha experimentat millores significatives en eficiència i costos al llarg del temps.
         br
-        | Poden estar fets de materials resistents a la corrosió, com titani o aliatges de níquel, per suportar les condicions
-        | d'alta temperatura i salinitat de l'aigua de mar.
-        br
-        | Evaporadors i condensadors:
-        br
-        | Materials resistents a la corrosió i al calor, com acer inoxidable o aliatges especials.
-        br
-        | Recipients d'emmagatzematge:
-        br
-        | Com a la òsmosi inversa, s'utilitzen materials resistents a la corrosió per emmagatzemar l'aigua tractada.
-    #imgDiv
-      img#i1(style="border-radius: 10px;", src="/Imatges/sal.png", alt="desalinitzadora")
-  div(style="text-align: center;")
-    h1(style="font-size: 30px") Tractament previ i post-tractament:
-    p#p4(style="text-align:center;font-size: 24px")
-      | Filtres i pretractament:
-      br
-      | Depenent de la tecnologia específica, es poden utilitzar diferents materials per a la filtració, com mitjans
-      | filtrants de fibra de vidre, carbó actiu i altres materials adequats per a l'eliminació de partícules i contaminants
-      | prèvis al procés principal.
-      br
-      | Productes químics:
-      br
-      | S'utilitzen diversos productes químics per tractar l'aigua abans i després del procés principal. Els recipients i
-      | tuberies que entren en contacte amb aquests productes sovint estan fets de materials compatibles amb els químics
-      | utilitzats.
-      br
-      | Eficiència i costos:
-      br
-      | La selecció de materials depèn de factors com la composició de l'aigua d'alimentació, la pressió, la temperatura i
-      | la durabilitat requerida pel sistema. Cal investigar sobre la font de l'aigua i també poder guanyar eficiència.
-      br
-      | Els costos d'una dessalinadora depenen de diversos factors, incloent el cost inicial, els costos operatius, la
-      | disponibilitat i cost de l'energia, entre d'altres. La tecnologia d'òsmosi inversa (OI) ha estat una de les opcions
-      | més comúment utilitzades i ha experimentat millores significatives en eficiència i costos al llarg del temps.
-      br
-      | Les tecnologies solars i altres fonts d'energia renovable també poden ser atractives des del punt de vista
-      | ambiental, però sovint tenen costos inicials més alts. Tot i així, a llarg termini, l'ús d'energies renovables pot
-      | resultar més econòmic.
-  .videoContainer(style="text-align: center;")
-    h1 Més informació:
-    iframe.vid2(width="560", height="315", src="https://www.youtube.com/embed/mZ7bgkFgqJQ?si=VwDpwG7FOCUebuuB", title="YouTube video player", frameborder="0", allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share", allowfullscreen)
-    iframe.vid3(width="560", height="315", src="https://www.youtube.com/embed/mEXzzlDCkoo?si=BnF4o0JYcjviaYB6", title="YouTube video player", frameborder="0", allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share", allowfullscreen)
-  footer
-    h3.titolContacte Contacte:
-    ul.ulContacte
-      li Telf: 746783562
-      li Email: contacte.aigua@gmail.com
-      li C. de la Industria 117, L'Eixample, 08025 Barcelona
-    h3.titolSocials Troba'ns a:
-    .ulSocials
-      img(src="Imatges/instagram.svg", width="30", height="30")
-      img(src="Imatges/facebook.svg", width="30", height="30")
-      img(src="Imatges/tiktok.svg", width="30", height="30")
-      img(src="Imatges/x.svg", width="30", height="30")
-      img(src="Imatges/youtube.svg", width="30", height="30")
-      link(rel='stylesheet', href='/des.css')
-      link(rel="icon", type="image/x-icon", href="/IMATGES/favicon.ico")
+        | Les tecnologies solars i altres fonts d'energia renovable també poden ser atractives des del punt de vista
+        | ambiental, però sovint tenen costos inicials més alts. Tot i així, a llarg termini, l'ús d'energies renovables pot
+        | resultar més econòmic.
+    .videoContainer(style="text-align: center;")
+      h1 Més informació:
+      iframe.vid2(width="560", height="315", src="https://www.youtube.com/embed/mZ7bgkFgqJQ?si=VwDpwG7FOCUebuuB", title="YouTube video player", frameborder="0", allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share", allowfullscreen)
+      iframe.vid3(width="560", height="315", src="https://www.youtube.com/embed/mEXzzlDCkoo?si=BnF4o0JYcjviaYB6", title="YouTube video player", frameborder="0", allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share", allowfullscreen)
+      footer
+          h3.titolContacte Contacte:
+          ul.ulContacte
+            li Telf: 746783562
+            li Email: contacte.aigua@gmail.com
+            li C. de la Industria 117, L'Eixample, 08025 Barcelona
+          h3.titolSocials Troba'ns a:
+          .ulSocials
+            img(src="Imatges/instagram.svg", width="30", height="30")
+            img(src="Imatges/facebook.svg", width="30", height="30")
+            img(src="Imatges/tiktok.svg", width="30", height="30")
+            img(src="Imatges/x.svg", width="30", height="30")
+            img(src="Imatges/youtube.svg", width="30", height="30")
+            link(rel='stylesheet', href='/des.css')
+            link(rel="icon", type="image/x-icon", href="/IMATGES/favicon.ico")

@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&family=Orbitron:wght@600&family=Pixelify+Sans:wght@600&display=swap');
+
+/*---------------------------------MENU----------------------------------------------*/
+*{
+    margin: 0px;
+    font-family: 'Chakra Petch', sans-serif;
+}
+@font-face {
+    font-family: "ADL";
+    src: url("font/ADL.ttf");
+}
+
+*{
+    margin: 0px;
+    font-family: 'Chakra Petch', sans-serif;
+}
+
+html{
+    overflow-x: hidden;
+    background-color: #E8F1F2;
+
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+}
+
+.water-menu {
+    background-color: #3498db; /* Azul claro */
+    padding: 15px;
+    display: flex;
+    justify-content: center; /* Cambiado a centrar */
+    align-items: center;
+}
+
+.logo {
+    color: #fff; /* Texto blanco */
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.lu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.menu {
+    margin: 0 10px;
+}
+
+.aa {
+    text-decoration: none;
+    color: #fff; /* Texto blanco */
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.aa:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #fff; /* Línea blanca */
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+}
+
+.aa:hover {
+    color: rgb(230, 242, 153); /* Cambia a verde en hover */
+}
+
+.aa:hover:before {
+    visibility: visible;
+    transform: scaleX(1);
+}
+/*------Codigo-------*/
+#etiq{
+    line-height: 5;
+    padding-top:42px;
+    font-weight:bold;
+    padding-right: 5px;
+}
+#pob{
+    display: inline-flex;
+    font-weight: bold;
+    margin-left: 10%;
+}
+#ans{
+    margin-right: 45px;
+}
+#grafica{
+    margin-left: 18%;
+}
+.parent {
+    
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    margin-left: 24%;
+
+    }
+    .txt{
+        padding: 15px;
+        border: 1px solid lightgray;
+        box-shadow: 2px 2px 8px 4px #d3d3d3d1;
+        border-radius:15px;
+        margin-bottom: 30px;
+        margin-right: 10px;
+    }
+    .tit{
+        padding: 15px;
+        border: 1px solid lightgray;
+        box-shadow: 2px 2px 8px 4px #d3d3d3d1;
+        border-radius:15px;
+        margin-right: 10px;
+        margin-bottom: 5px;
+    }
+    .div1 { 
+        grid-area: 1 / 1 / 3 / 3; 
+    }
+    .div2 { grid-area: 3 / 1 / 5 / 3; }
+    .div3 { grid-area: 3 / 3 / 5 / 5; }
+    .div4 { grid-area: 1 / 3 / 3 / 5; }
+
+    #info{
+        font-size: 40px;
+        margin-bottom:3%;
+        margin-left: 21%;
+        margin-top: 1%;
+    }
+
+    #foto{
+        display:block;
+        margin:auto;
+        width: 1161px;
+        height: 400px;
+    }
+
+    #aus{
+        font-size: 40px;
+        margin-bottom: 20px;
+        margin-top: 40px;
+        text-align: center;
+        font-family: "ADL";
+        margin-bottom: 60px;
+    }
+    
+.videoContainer {
+    margin-top: 5%;
+    margin-left: 15%;
+}
+
+footer{
+    background-color: #3498DB;
+    height: 180px;
+    width: 100%;
+    margin-top: 8%;
+    display: grid;
+}
+
+.titolContacte{
+    position: absolute;
+    left: 8%;
+    margin-top: 2%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+.titolSocials{
+    position: absolute;
+    left: 78%;
+    margin-top: 2%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+.ulContacte{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    list-style-type: none;
+    margin-top: 4%;
+    margin-left: 5.5%;
+}
+
+.ulSocials{
+    display: flex;
+    gap: 5%;
+    position: absolute;
+    left: 78%;
+    margin-top: 4%;
+    cursor: pointer;
+    filter: invert(100%);
+}
+
+#mapa{
+    font-size: 40px;
+    margin-bottom:3%;
+    margin-left: 21%;
+    margin-top: 1%;
+}
+
+.miCanvas{
+    margin-left: 47px;
+}

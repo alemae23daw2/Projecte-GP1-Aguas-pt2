@@ -205,5 +205,8 @@ footer {
     filter: invert(100%);
 }
 #map{
-    height: 400px
+    height: 400px;
+    margin: auto;
+    margin-top: 10px;
+    width: 1000px;
 }

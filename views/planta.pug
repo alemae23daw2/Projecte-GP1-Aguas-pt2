@@ -12,7 +12,6 @@ block content
     link(rel="icon" type="image/x-icon" href="/IMATGES/favicon.ico")
 
   body
-    #map
     h1 On hem pensat Situar la planta dessalinitzadora?
     h2.subtitul Hem decidit que una bona zona seria entre Leki i Orimedu ja que hi ha una gran expansió de terreny sense arbres ni construccions:
     br
@@ -22,7 +21,8 @@ block content
           .item
           .item
             img(src="Imatges/cuadrant_colors.png" alt="Image")
-    
+    #map
+  
     .posters-container
       .poster(id="titA")
         h2
@@ -35,19 +35,19 @@ block content
       ul.ulContacte
         li Telf: 746783562
         li Email: contacte.aigua@gmail.com
-        li C. de la Industria 117, L'Eixample, 08025 Barcelona
-      h3.titolSocials Troba'ns a:
+        li C. de la Industria 117, "L'Eixample, 08025 Barcelona"
+      h3.titolSocials "Troba'ns a:"
       .ulSocials
         img(src="Imatges/instagram.svg" width="30" height="30")
         img(src="Imatges/facebook.svg" width="30" height="30")
         img(src="Imatges/tiktok.svg" width="30" height="30")
         img(src="Imatges/x.svg" width="30" height="30")
         img(src="Imatges/youtube.svg" width="30" height="30")
+  script.
+    var map = L.map('map').setView([6.441626288975287, 3.773954097364349], 13)
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map)
+    L.marker([6.441626288975287, 3.773954097364349]).addTo(map)
+    .bindPopup('Desalinitzadora')
+    .openPopup()
 
-    script.
-      var map = L.map('map').setView([6.441626288975287, 3.773954097364349], 13)
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map)
-      L.marker([6.441626288975287, 3.773954097364349]).addTo(map)
-        .bindPopup('Desalinitzadora')
-        .openPopup()
     
