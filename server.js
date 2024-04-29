@@ -29,7 +29,23 @@ app.get('/homeadmin', function(req, res) {
     res.render('homeadmin'); 
 });
 app.get('/desalinitzadores', function(req, res) {
-    res.render('desalinitzadores'); 
+    res.render('desalinitzadores');
+});
+app.get('/nigeria', function(req, res) {
+    res.render('nigeria');
+});
+app.get('/australia', function(req, res) {
+    res.render('australia');
+});
+app.get('/comparacio', function(req, res) {
+    res.render('comparacio');
+});
+app.get('/contacte', function(req, res) {
+    res.render('contacte');
+});
+
+app.get('/planta', function(req, res) {
+    res.render('planta'); 
 });
 app.get('/logout', routes.logout());
 app.post('/afegir', routes.afegir());

@@ -16,8 +16,7 @@ html
             li: a(href='/nigeria') Nigeria
             li: a(href='/australia') Australia
             li: a(href='/comparacio') Comparació
-            li: a(href='/plan') Plan
-            li: a(href='#') Contacto
+            li: a(href='/contacte') Contacto
             li: a(href='/planta') Planta
         if !logat
           .login-btns
@@ -25,11 +24,9 @@ html
             button(@click="openAdminLogin") Iniciar Sesión (Administrador)
             button(@click="openRegister") Registrarse
         else if isAdmin
-            p #{nom}
             button: a(href='/panelControl') Panell de Control Admin
             button: a(href='/logout') Logout
         else if !isAdmin
-            p #{nom}
             button: a(href='/logout') Logout
       #loginModal.modal(v-if="isLoginModalOpen")
         .modal-content
@@ -92,7 +89,6 @@ html
   block content
     logged= logged
     isAdmin= isAdmin
-    nom= nom
 
   script(type='module').
     import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js';
