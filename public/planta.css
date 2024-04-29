@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&family=Orbitron:wght@600&family=Pixelify+Sans:wght@600&display=swap');
+
+/*---------------------------------MENU----------------------------------------------*/
+*{
+    margin: 0px;
+    font-family: 'Chakra Petch', sans-serif;
+}
+
+html{
+    overflow-x: hidden;
+    background-color: #E8F1F2;
+
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+}
+
+.water-menu {
+    background-color: #3498db; 
+    padding: 15px;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+
+.logo {
+    color: #fff; 
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.lu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.menu {
+    margin: 0 10px;
+}
+
+.aa {
+    text-decoration: none;
+    color: #fff; 
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.aa:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #fff; 
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+}
+
+.aa:hover {
+    color: rgb(230, 242, 153); 
+}
+
+.aa:hover:before {
+    visibility: visible;
+    transform: scaleX(1);
+    /*Tituls*/
+}
+h1 {
+    text-align: center;
+    margin-top: 20px; 
+    font-family: 'Chakra Petch', sans-serif;
+}
+.subtitul{
+    font-size: 20px;
+    text-align: center;
+    margin-top: 20px; 
+    font-family: 'Chakra Petch', sans-serif;
+}
+/* galeria imatges */
+.gallery-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 178px;
+    overflow: hidden;
+}
+
+.gallery-scroll {
+    display: flex;
+}
+
+.gallery {
+    display: flex;
+    padding: 0px 2px;
+}
+
+.item {
+    padding: 40px 2px;
+}
+
+.item img {
+    display: block;
+    max-width: 100%; 
+    max-height: 100%; 
+    width: auto; 
+    height: auto; 
+    margin: 0 auto; 
+}
+/* Estils per als posters */
+.posters-container {
+    display: flex;
+    flex-wrap: wrap; /* Permet que els pòsters es desplacin a una nova línia si no hi ha prou espai */
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.poster {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    width: 45%;
+    box-sizing: border-box;
+    margin-bottom: 20px; /* Añadido margen inferior para separar los bloques */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+
+
+.poster:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.poster h2 {
+    font-size: 1.5em;
+    color: #3498db;
+    text-decoration: underline;
+    text-align: center;
+}
+
+.poster ul {
+    list-style: none;
+    padding: 0;
+}
+
+.poster li {
+    margin-bottom: 10px;
+}
+
+/* Estils per al footer */
+footer {
+    background-color: #3498DB;
+    height: 180px;
+    width: 100%;
+    margin-top: 8%;
+    display: grid;
+}
+
+.titolContacte {
+    position: absolute;
+    left: 8%;
+    margin-top: 2%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+.titolSocials {
+    position: absolute;
+    left: 78%;
+    margin-top: 2%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+.ulContacte {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    list-style-type: none;
+    margin-top: 4%;
+    margin-left: 5.5%;
+}
+
+.ulSocials {
+    display: flex;
+    gap: 5%;
+    position: absolute;
+    left: 78%;
+    margin-top: 4%;
+    cursor: pointer;
+    filter: invert(100%);
+}
+#map{
+    height: 400px
+}
