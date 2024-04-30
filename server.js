@@ -49,6 +49,9 @@ app.get('/home', function(req, res) {
 app.get('/planta', function(req, res) {
     res.render('planta'); 
 });
+app.get('/nigeria', function(req, res) {
+    res.render('nigeria'); 
+});
 app.get('/logout', routes.logout());
 app.post('/afegir', routes.afegir());
 app.post('/login', routes.login());
