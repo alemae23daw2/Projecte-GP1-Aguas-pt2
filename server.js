@@ -52,6 +52,9 @@ app.get('/planta', function(req, res) {
 app.get('/nigeria', function(req, res) {
     res.render('nigeria'); 
 });
+app.get('/comparacio', function(req, res) {
+    res.render('comparacio'); 
+});
 app.get('/logout', routes.logout());
 app.post('/afegir', routes.afegir());
 app.post('/login', routes.login());

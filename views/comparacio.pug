@@ -1,0 +1,60 @@
+extends layout
+
+block content
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Comparació
+    link(rel="stylesheet", href="comparativa.css")
+    link(rel="icon", type="image/x-icon", href="/IMATGES/favicon.ico")
+  body
+
+    h1
+      b Comparativa
+    .posters-container
+      .poster#titA
+        h2: u Austràlia
+        br
+        ul
+          li
+            b Gestió de l'aigua:
+            | Austràlia ha enfrontat reptes significatius relacionats amb la escassetat d'aigua degut a condicions climàtiques, com sequeres prolongades.
+            | Per abordar aquesta qüestió, Austràlia ha implementat polítiques i tecnologies avançades de gestió de l'aigua, incloent la construcció de desalinizadores.
+          li
+            b Desalinización:
+            | Austràlia ha invertit en infraestructures de desalinització per aprofitar l'aigua de l'oceà. Ciutats com Sydney i Perth han construït plantes desalinizadores per garantir un subministrament estable d'aigua potable, especialment durant períodes de sequera.
+          li
+            b Adaptació al canvi climàtic:
+            | Austràlia és molt conscient dels efectes del canvi climàtic i ha implementat mesures per adaptar-se, incloent estratègies per fer front a esdeveniments climàtics extrems com incendis forestals i inundacions.
+          li
+            b Conservació de l'aigua:
+            | S'han promogut iniciatives per a la conservació de l'aigua, incloent tecnologies de recol·lecció d'aigua de pluja, polítiques d'ús eficient de l'aigua a l'agricultura i consciència pública sobre la importància de conservar aquest recurs.
+      .poster#titN
+        h2: u Nigèria
+        br
+        ul
+          li
+            b Escassetat d'aigua:
+            | Nigèria també enfronta reptes significatius relacionats amb la escassetat d'aigua, especialment en àrees densament poblades i en desenvolupament ràpid.
+          li
+            b Impactes del canvi climàtic:
+            | El canvi climàtic ha exacerbant la situació, amb esdeveniments climàtics extrems, com sequeres més intenses i freqüents, afectant la disponibilitat d'aigua.
+          li
+            b Desalinització limitada:
+            | A diferència d'Austràlia, Nigèria ha implementat un nombre limitat de desalinizadores. Les limitacions poden incloure factors financers, manca d'infraestructura i una menor consciència sobre la importància d'aquestes tecnologies.
+          li
+            b Gestió de l'aigua i sostenibilitat:
+            | Nigèria pot beneficiar-se de la implementació d'estratègies sostenibles de gestió de l'aigua, incloent la promoció de l'eficiència en l'ús de l'aigua i la inversió en infraestructures per a la conservació i distribució de l'aigua.
+    footer
+      h3.titolContacte Contacte:
+      ul.ulContacte
+        li Telèfon: 746783562
+        li Correu electrònic: contacte.aigua@gmail.com
+        li C. de la Indústria 117, L'Eixample, 08025 Barcelona
+      h3.titolSocials Troba'ns a:
+      .ulSocials
+        img(src="Imatges/instagram.svg", width="30", height="30")
+        img(src="Imatges/facebook.svg", width="30", height="30")
+        img(src="Imatges/tiktok.svg", width="30", height="30")
+        img(src="Imatges/x.svg", width="30", height="30")
+        img(src="Imatges/youtube.svg", width="30", height="30")
