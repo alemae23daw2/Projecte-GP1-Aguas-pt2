@@ -38,7 +38,7 @@ function verifySession(sessionId) {
 }
 
 exports.index = function (req, res) {
-    res.render('layout');
+    res.render('home');
 };
 
 exports.afegir = function () {
