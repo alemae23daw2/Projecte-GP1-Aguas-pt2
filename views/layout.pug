@@ -72,7 +72,10 @@ html
             br
             br
             label(for='registerGender') Género
-            input(type='text', id='registerGender', name='genero', required)
+            select(id='registerGender', name='genero', required)
+              option(value='Hombre') Hombre
+              option(value='Mujer') Mujer
+              option(value='Prefiero no decirlo') Prefiero no decirlo
             br
             br
             label(for='registerEmail') Correo Electrónico
